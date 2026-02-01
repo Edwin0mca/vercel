@@ -5,15 +5,30 @@ import { motion } from "framer-motion";
 const boardOfDirectors = [
   { name: "Mr. Arun Pradeep", role: "Founder & CEO, Global" },
   { name: "Mr. Emmanuel Mani", role: "Co-Founder & CTO, Global" },
-  { name: "Mr. Ravindran Subramaniam", role: "Co-Founder & Head of Client Engagements, USA" },
-  { name: "Mrs. Tabitha Emmanuel", role: "Co-Founder & Head of Security & Compliances, Global" },
-  { name: "Mr. Praveen Kumar", role: "Regional Head of Business Development, India" },
+  {
+    name: "Mr. Ravindran Subramaniam",
+    role: "Co-Founder & Head of Client Engagements, USA",
+  },
+  {
+    name: "Mrs. Tabitha Emmanuel",
+    role: "Co-Founder & Head of Security & Compliances, Global",
+  },
+  {
+    name: "Mr. Praveen Kumar",
+    role: "Regional Head of Business Development, India",
+  },
 ];
 
 const advisoryBoard = [
   { name: "Mr. CR Venkatesh (CRV)", role: "Founder & CEO – Dot Com Infoway" },
-  { name: "Mr. Sethuraman Sathappan", role: "COO (Retired) – Emirates NBD Bank, India" },
-  { name: "Mrs. Ramadevi S", role: "Founder & CEO – Elangi Thanga Maaligai" },
+  {
+    name: "Mr. Sethuraman Sathappan",
+    role: "COO (Retired) – Emirates NBD Bank, India",
+  },
+  {
+    name: "Mrs. Ramadevi S",
+    role: "Founder & CEO – Elangi Thanga Maaligai",
+  },
 ];
 
 const cardVariants = {
@@ -26,7 +41,7 @@ const cardVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1], // ✅ FIXED
+      ease: "easeOut", // ✅ Vercel-safe
     },
   },
 };
@@ -34,7 +49,6 @@ const cardVariants = {
 const Leadership = () => {
   return (
     <section className="relative overflow-hidden py-32 px-6 bg-gradient-to-b from-[#6816EF]/6 via-white to-[#6816EF]/10">
-
       {/* FLOATING BRAND LIGHTS */}
       <motion.div
         animate={{ y: [0, 40, 0], x: [0, 30, 0] }}
@@ -48,13 +62,12 @@ const Leadership = () => {
       />
 
       <div className="relative max-w-6xl mx-auto space-y-32">
-
-        {/* BOARD */}
+        {/* BOARD OF DIRECTORS */}
         <div>
           <motion.h2
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
             className="text-3xl font-bold text-center text-[#6816EF] mb-16"
           >
@@ -71,10 +84,7 @@ const Leadership = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
                 whileHover={{ y: -8 }}
-                className="group relative bg-white/85 backdrop-blur
-                           rounded-2xl p-7 shadow-md
-                           border border-[#6816EF]/15
-                           overflow-hidden transition"
+                className="group relative bg-white/85 backdrop-blur rounded-2xl p-7 shadow-md border border-[#6816EF]/15 overflow-hidden transition"
               >
                 <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#6816EF] via-[#9b6cff] to-[#6816EF]" />
 
@@ -93,12 +103,12 @@ const Leadership = () => {
           </div>
         </div>
 
-        {/* ADVISORY */}
+        {/* ADVISORY BOARD */}
         <div>
           <motion.h2
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
             className="text-3xl font-bold text-center text-[#6816EF] mb-16"
           >
@@ -115,10 +125,7 @@ const Leadership = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
                 whileHover={{ y: -8 }}
-                className="group relative bg-white/85 backdrop-blur
-                           rounded-2xl p-7 shadow-md
-                           border border-[#6816EF]/15
-                           overflow-hidden transition"
+                className="group relative bg-white/85 backdrop-blur rounded-2xl p-7 shadow-md border border-[#6816EF]/15 overflow-hidden transition"
               >
                 <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#6816EF] via-[#9b6cff] to-[#6816EF]" />
 
@@ -136,7 +143,6 @@ const Leadership = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
